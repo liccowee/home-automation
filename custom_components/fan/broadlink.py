@@ -67,7 +67,7 @@ def setup_platform(hass, config, add_devices_callback, discovery_info=None):
     #broadlink_device = broadlink.rm((ip_addr, 80), mac_addr, None)
     #broadlink_device.timeout = config.get(CONF_TIMEOUT)
 
-    devices = broadlink.discover(timeout=3)
+    devices = broadlink.discover(timeout=10)
     _LOGGER.error("Broadlink discovering...")
     for i in devices:
         _LOGGER.error(binascii.hexlify(i.mac) + " looking for: " + mac_addr)
