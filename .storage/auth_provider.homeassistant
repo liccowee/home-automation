@@ -1,0 +1,13 @@
+{
+    "data": {
+        "salt": "75160457136fe3079bdd9fa53d6c5a580b2914bb3cd4eb902fff56ab397a5bbf",
+        "users": [
+            {
+                "password": "JDJiJDEyJHJoTFphLy9KTlgwcXZyVWxOa1hJVS5iSVVkTmdGMHVZdEpuRFhDSmZrc0VLMThISGJDOFRt",
+                "username": "familytan"
+            }
+        ]
+    },
+    "key": "auth_provider.homeassistant",
+    "version": 1
+}

@@ -1,0 +1,17 @@
+2018-12-09 00:39:32 WARNING (MainThread) [homeassistant.loader] You are using a custom component for climate.broadlink which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you do experience issues with Home Assistant.
+2018-12-09 00:39:32 WARNING (MainThread) [homeassistant.loader] You are using a custom component for fan.broadlink which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you do experience issues with Home Assistant.
+2018-12-09 00:39:43 ERROR (MainThread) [custom_components.climate.broadlink] Failed to connect to Broadlink RM Device
+2018-12-09 00:39:43 WARNING (MainThread) [homeassistant.components.sensor] Setup of platform yr is taking over 10 seconds.
+2018-12-09 00:39:43 WARNING (MainThread) [homeassistant.components.climate] Setup of platform broadlink is taking over 10 seconds.
+2018-12-09 00:39:43 ERROR (MainThread) [homeassistant.components.sensor.yr] Retrying in 16 minutes: 
+2018-12-09 00:39:53 WARNING (MainThread) [homeassistant.components.fan] Setup of platform broadlink is taking over 10 seconds.
+2018-12-09 00:39:53 ERROR (Thread-2) [custom_components.fan.broadlink] Failed to connect to Broadlink RM Device
+2018-12-09 00:41:46 ERROR (Thread-7) [custom_components.climate.broadlink] Failed to send packet to Broadlink RM Device
+2018-12-09 00:41:47 ERROR (Thread-2) [custom_components.climate.broadlink] Failed to send packet to Broadlink RM Device
+2018-12-09 00:41:53 ERROR (Thread-15) [custom_components.climate.broadlink] Failed to send packet to Broadlink RM Device
+2018-12-09 00:41:55 ERROR (Thread-4) [custom_components.climate.broadlink] Failed to send packet to Broadlink RM Device
+2018-12-09 00:42:04 ERROR (Thread-8) [custom_components.climate.broadlink] Failed to send packet to Broadlink RM Device
+2018-12-09 00:42:14 ERROR (Thread-22) [custom_components.fan.broadlink] Failed to send packet to Broadlink RM Device
+2018-12-09 00:42:25 ERROR (Thread-24) [custom_components.fan.broadlink] Failed to send packet to Broadlink RM Device
+2018-12-09 00:42:26 ERROR (Thread-25) [custom_components.fan.broadlink] Failed to send packet to Broadlink RM Device
+2018-12-09 00:42:27 ERROR (Thread-23) [custom_components.fan.broadlink] Failed to send packet to Broadlink RM Device

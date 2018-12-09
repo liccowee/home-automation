@@ -1,0 +1,111 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: Home
+  # Location required to calculate the time the sun rises and sets
+  latitude: 0
+  longitude: 0
+  # Impacts weather/sunrise data (altitude above sea level in meters)
+  elevation: 0
+  # metric for Metric, imperial for Imperial
+  unit_system: metric
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: UTC
+  # Customization file
+  customize: !include customize.yaml
+
+# Show links to resources in log and frontend
+introduction:
+
+# Enables the frontend
+frontend:
+
+# Enables configuration UI
+config:
+
+# Uncomment this if you are using SSL/TLS, running in Docker container, etc.
+# http:
+#   base_url: example.duckdns.org:8123
+
+# Checks for available updates
+# Note: This component will send some information about your system to
+# the developers to assist with development of Home Assistant.
+# For more information, please see:
+# https://home-assistant.io/blog/2016/10/25/explaining-the-updater/
+updater:
+  # Optional, allows Home Assistant developers to focus on popular components.
+  # include_used_components: true
+
+# Discover some devices automatically
+discovery:
+
+# Allows you to issue voice commands from the frontend in enabled browsers
+conversation:
+
+# Enables support for tracking state changes over time
+history:
+
+# View all events in a logbook
+logbook:
+
+# Enables a map showing the location of tracked devices
+map:
+
+# Track the sun
+sun:
+
+# Sensors
+sensor:
+  # Weather prediction
+  - platform: yr
+
+# Text to speech
+tts:
+  - platform: google
+
+# Cloud
+cloud:
+
+# Custom Components
+fan:
+  - platform: broadlink
+    name: Living Room Fan
+    host: 192.168.1.42
+    mac: '78:0F:77:52:32:6D'
+    rfcodes_ini: 'broadlink_fan_codes/livingroom_fanco.ini'
+    default_speed: low
+    defaut_direction: left
+    customize:
+        speeds:
+            - low
+            - medium
+            - high
+            - highest
+
+climate:
+  - platform: broadlink
+    name: Daikin EcoKing
+    host: 192.168.1.42
+    mac: '78:0F:77:52:32:6D'
+    ircodes_ini: 'broadlink_climate_codes/daikin_ecoking.ini'
+    min_temp: 16
+    max_temp: 30
+    target_temp: 20
+    target_temp_step: 1
+    temp_sensor: sensor.living_room_temperature
+    default_operation: 'off'
+    default_fan_mode: mid
+    customize:
+      operations:
+        - 'off'
+        - idle
+        - cool
+        - heat
+      fan_modes:
+        - low
+        - mid
+        - high
+        - auto
+
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml

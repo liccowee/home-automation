@@ -1,0 +1,83 @@
+{
+    "data": {
+        "credentials": [
+            {
+                "auth_provider_id": null,
+                "auth_provider_type": "homeassistant",
+                "data": {
+                    "username": "familytan"
+                },
+                "id": "03d68962093649389672a5f2e91cef9d",
+                "user_id": "80a2a37a1356491585527168ea3b6371"
+            }
+        ],
+        "groups": [
+            {
+                "id": "system-admin",
+                "name": "Administrators"
+            },
+            {
+                "id": "system-read-only",
+                "name": "Read Only"
+            }
+        ],
+        "refresh_tokens": [
+            {
+                "access_token_expiration": 1800.0,
+                "client_icon": null,
+                "client_id": "http://192.168.1.23:8123/",
+                "client_name": null,
+                "created_at": "2018-12-08T15:56:43.936710+00:00",
+                "id": "4ce4c5a4911347778eda6ad8eb12b99a",
+                "jwt_key": "9a42a30b3abd36e1dc3e53baf54206fea2b19c332ff85830a9fb7dfc798a5c11d6422902aa46c66d2718333891a8c9c02c1983ac0f6a15785b32583bc622e18c",
+                "last_used_at": "2018-12-09T03:12:10.122430+00:00",
+                "last_used_ip": "192.168.1.37",
+                "token": "3ec850796ba4dd30bdc4106912e7e1a78a060da8183a09189a3d4bd12190d297df489a014f4e676e27e4d592567b1fbe6c445e2e3ce0d0b893a59bd711705b45",
+                "token_type": "normal",
+                "user_id": "80a2a37a1356491585527168ea3b6371"
+            },
+            {
+                "access_token_expiration": 1800.0,
+                "client_icon": null,
+                "client_id": "http://192.168.1.23:8123/",
+                "client_name": null,
+                "created_at": "2018-12-08T11:29:15.284802+00:00",
+                "id": "a61b1dd261c94da0893dcbfa5437b945",
+                "jwt_key": "e7a78f808b7cd27089f0540bd4a02a58fae173321763e9d3ac9fc567f60da6a052f9b93225c3f331acf1cecbb22e2e78f7dec2c681c19bb262cc3ee59c286dfe",
+                "last_used_at": "2018-12-09T05:40:19.851243+00:00",
+                "last_used_ip": "192.168.1.6",
+                "token": "320ed982ec3c22203fdb6a186d6dd21b2f127ece80f0c117787fc60c08c30c09a00aa29b9f77cd1ad7d964c6e7544d1f26527c98423d16983e559c0cc7e458dd",
+                "token_type": "normal",
+                "user_id": "80a2a37a1356491585527168ea3b6371"
+            },
+            {
+                "access_token_expiration": 1800.0,
+                "client_icon": null,
+                "client_id": "http://115.134.246.214:2424/",
+                "client_name": null,
+                "created_at": "2018-12-09T03:21:11.348074+00:00",
+                "id": "b905a09658b54c9db9ba2452e4a5baf3",
+                "jwt_key": "3010d9c35931796d625310f54009eb15667a44afe5f608cb28c946de4cfade4bf5f27bd2c0bc3113683864f5bb9761a5c364dfc77ed5de77de01100eefa1aafc",
+                "last_used_at": "2018-12-09T03:21:11.348575+00:00",
+                "last_used_ip": "115.134.246.214",
+                "token": "29cd853b52d358075fd65bb2860ed10d02ecc5ec923fa886b3fc092d28aca94afcaa4359c3422418789d5bb70d3917de341cd394180af32b9f80ec01c5470eca",
+                "token_type": "normal",
+                "user_id": "80a2a37a1356491585527168ea3b6371"
+            }
+        ],
+        "users": [
+            {
+                "group_ids": [
+                    "system-admin"
+                ],
+                "id": "80a2a37a1356491585527168ea3b6371",
+                "is_active": true,
+                "is_owner": true,
+                "name": "Family Tan",
+                "system_generated": false
+            }
+        ]
+    },
+    "key": "auth",
+    "version": 1
+}
