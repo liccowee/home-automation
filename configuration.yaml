@@ -70,7 +70,7 @@ fan:
   - platform: broadlink
     name: Living Room Fan
     host: 192.168.1.42
-    mac: '78:0F:77:52:32:6D'
+    mac: '6d3252770f78'
     rfcodes_ini: 'broadlink_fan_codes/livingroom_fanco.ini'
     default_speed: low
     defaut_direction: left
