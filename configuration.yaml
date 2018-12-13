@@ -50,6 +50,9 @@ logbook:
 # Enables a map showing the location of tracked devices
 map:
 
+# weather
+weather:
+
 # Track the sun
 sun:
 
