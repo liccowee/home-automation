@@ -2,14 +2,14 @@ homeassistant:
   # Name of the location where Home Assistant is running
   name: Home
   # Location required to calculate the time the sun rises and sets
-  latitude: 5.1873
-  longitude: 100.5156
+  latitude: 2.503560
+  longitude: 102.860574
   # Impacts weather/sunrise data (altitude above sea level in meters)
   elevation: 430
   # metric for Metric, imperial for Imperial
   unit_system: metric
   # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-  time_zone: Asia/Kuala_Lumpur
+  time_zone: UTC
   # Customization file
   customize: !include customize.yaml
 
@@ -54,6 +54,8 @@ map:
 weather:
   - platform: darksky
     api_key: 27f2200b9788acd8ac6a1593488c1100
+    latitude: 2.503560
+    longitude: 102.860574
 
 # Track the sun
 sun:
