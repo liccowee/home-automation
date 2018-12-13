@@ -68,9 +68,9 @@ cloud:
 # Custom Components
 fan:
   - platform: broadlink
-    name: Living Room Fan
-    host: 192.168.1.42
-    mac: '6d3252770f78'
+    name: Jian Room's Fan
+    host: 192.168.1.61
+    mac: '78:0F:77:52:32:6D'
     rfcodes_ini: 'broadlink_fan_codes/livingroom_fanco.ini'
     default_speed: low
     defaut_direction: left
@@ -83,8 +83,8 @@ fan:
 
 climate:
   - platform: broadlink
-    name: Daikin EcoKing
-    host: 192.168.1.42
+    name: Jian Room's Daikin EcoKing
+    host: 192.168.1.61
     mac: '78:0F:77:52:32:6D'
     ircodes_ini: 'broadlink_climate_codes/daikin_ecoking.ini'
     min_temp: 16

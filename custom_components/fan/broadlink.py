@@ -54,8 +54,7 @@ def setup_platform(hass, config, add_devices_callback, discovery_info=None):
     """Set up the Broadlink-controlled fan platform."""
     name = config.get(CONF_NAME)
     ip_addr = config.get(CONF_HOST)
-    #mac_addr = binascii.unhexlify(config.get(CONF_MAC).encode().replace(b':', b''))
-    mac_addr = config.get(CONF_MAC)
+    mac_addr = binascii.unhexlify(config.get(CONF_MAC).encode().replace(b':', b''))
     speed_list = config.get(CONF_CUSTOMIZE).get(CONF_SPEEDS, []) or DEFAULT_SPEED_LIST
     if not STATE_OFF in speed_list:
         speed_list.insert(0, STATE_OFF)
@@ -64,15 +63,8 @@ def setup_platform(hass, config, add_devices_callback, discovery_info=None):
     
     import broadlink
     
-    #broadlink_device = broadlink.rm((ip_addr, 80), mac_addr, None)
-    #broadlink_device.timeout = config.get(CONF_TIMEOUT)
-
-    devices = broadlink.discover(timeout=10)
-    _LOGGER.error("Broadlink discovering...")
-    for i in devices:
-        _LOGGER.error(binascii.hexlify(i.mac) + " looking for: " + mac_addr)
-        if binascii.hexlify(i.mac) == mac_addr:
-            broadlink_device = i
+    broadlink_device = broadlink.rm((ip_addr, 80), mac_addr, None)
+    broadlink_device.timeout = config.get(CONF_TIMEOUT)
 
     try:
         broadlink_device.auth()
