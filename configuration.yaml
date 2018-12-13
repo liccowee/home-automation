@@ -52,6 +52,8 @@ map:
 
 # weather
 weather:
+  - platform: darksky
+    api_key: 27f2200b9788acd8ac6a1593488c1100
 
 # Track the sun
 sun:
