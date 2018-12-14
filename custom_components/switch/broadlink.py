@@ -192,6 +192,7 @@ class BroadlinkRMSwitch(SwitchDevice):
         self._state = False
         #self._command_on = b64decode(command_on) if command_on else None
         #self._command_off = b64decode(command_off) if command_off else None
+        _LOGGER.debug("Licco packet 2")
         self._command_on = bytearray.fromhex(command_on) if command_on else None
         self._command_off = bytearray.fromhex(command_off) if command_off else None
         self._device = device
@@ -230,6 +231,7 @@ class BroadlinkRMSwitch(SwitchDevice):
 
     def _sendpacket(self, packet, retry=2):
         """Send packet to device."""
+        _LOGGER.debug("Licco packet")
         if packet is None:
             _LOGGER.debug("Empty packet")
             return True
