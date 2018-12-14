@@ -71,6 +71,7 @@ PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend({
 
 def setup_platform(hass, config, add_entities, discovery_info=None):
     """Set up the Broadlink switches."""
+     _LOGGER.debug("Licco packet 3")
     import broadlink
     devices = config.get(CONF_SWITCHES)
     slots = config.get('slots', {})
