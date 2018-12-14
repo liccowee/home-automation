@@ -70,6 +70,10 @@ switch:
   - platform: broadlink
     host: 192.168.1.62
     mac: '78:0F:77:63:77:A0'
+    swithces:
+      door:
+        friendly_name: "Main Door"
+        command_on: 'JgBSAAcFBAAGGwgABf8GAAYfBAAGDAUABhYEDgQADCYLAAYVDQAGAwUABhQFBQwADDMIAAYGFAAGDAUADDAFAAwsBwAMNwQADCgEAAwzDAAGGQQADQUAAAAAAAA='
 
 # Cloud
 cloud:
