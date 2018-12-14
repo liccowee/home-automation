@@ -69,6 +69,13 @@ sensor:
 tts:
   - platform: google
 
+
+# broadlink learn a07763770f78
+switch:
+  - platform: broadlink
+    host: 192.168.1.62
+    mac: '78:0F:77:63:77:A0'
+
 # Cloud
 cloud:
 
