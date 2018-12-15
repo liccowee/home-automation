@@ -196,7 +196,7 @@ async def async_unload_entry(hass, entry):
     return await hass.data[DOMAIN].async_unload_entry(entry)
 
 
-class ClimateDevice(Entity):
+class TelevisionDevice(Entity):
     """Representation of a climate device."""
 
     @property
