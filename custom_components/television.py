@@ -1,5 +1,3 @@
-DOMAIN = 'television'
-
 import asyncio
 import logging
 import binascii
@@ -17,6 +15,7 @@ from homeassistant.helpers.entity import Entity
 from configparser import ConfigParser
 from base64 import b64encode, b64decode
 
+DOMAIN = 'television'
 REQUIREMENTS = ['broadlink==0.9.0']
 
 _LOGGER = logging.getLogger(__name__)
