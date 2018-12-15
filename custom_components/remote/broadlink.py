@@ -61,6 +61,17 @@ PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend({
     vol.Optional(CONF_HOST): cv.string,
 })
 
+@asyncio.coroutine
+def async_setup(hass, config):
+    """Set up variables."""
+    component = EntityComponent(_LOGGER, DOMAIN, hass)
+
+    entities = []
+    entities.append(BroadlinkIRTV('Remote Two', True, 'mdi:remote'))
+    yield from component.async_add_entities(entities)
+    return True
+
+
 async def async_setup_platform(hass, config, async_add_devices, discovery_info=None):
     """Set up the Broadlink IR Climate platform."""
     name = config.get(CONF_NAME)
@@ -97,7 +108,7 @@ async def async_setup_platform(hass, config, async_add_devices, discovery_info=N
         BroadlinkIRTV('Remote Two', True, 'mdi:remote')
     ])
 
-class BroadlinkIRTV(RemoteDevice):
+class BroadlinkIRTV(RemoteDevice, Entity):
     """Representation of a demo remote."""
 
     def __init__(self, name, state, icon):
