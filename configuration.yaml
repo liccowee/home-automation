@@ -83,6 +83,29 @@ switch:
 # Cloud
 cloud:
 
+#television
+television:
+  - platform: broadlink
+    name: "大廳 電視機"
+    host: 192.168.1.61
+    mac: '78:0F:77:52:32:6D'
+    ircodes_ini: ''
+    min_temp: 16
+    max_temp: 30
+    target_temp: 20
+    target_temp_step: 1
+    default_operation: 'off'
+    customize:
+      operations:
+        - 'off'
+        - cool
+        - heat
+      fan_modes:
+        - low
+        - mid
+        - high
+        - auto
+
 #input
 input_number:
   slider1:
