@@ -165,7 +165,7 @@ climate:
         - high
         - auto
   - platform: broadlink
-      name: "建 房間冷氣"
+      name: "建房間冷氣"
       host: 192.168.1.61
       mac: '78:0F:77:52:32:6D'
       ircodes_ini: 'broadlink_climate_codes/daikin_ecoking.ini'
