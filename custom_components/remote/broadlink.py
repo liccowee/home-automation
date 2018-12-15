@@ -47,16 +47,18 @@ DEFAULT_FAN_MODE_LIST = ['low', 'mid', 'high', 'auto']
 DEFAULT_OPERATION = 'off'
 DEFAULT_FAN_MODE = 'auto'
 
+CUSTOMIZE_SCHEMA = vol.Schema({
+    vol.Optional(CONF_SPEEDS): vol.All(cv.ensure_list, [cv.string]),
+    vol.Optional(CONF_OPERATIONS): vol.All(cv.ensure_list, [cv.string]),
+    vol.Optional(CONF_FAN_MODES): vol.All(cv.ensure_list, [cv.string])
+})
+
 PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend({
     vol.Optional(ATTR_ACTIVITY): cv.string,
     vol.Required(CONF_NAME): cv.string,
     vol.Optional(ATTR_DELAY_SECS, default=DEFAULT_DELAY_SECS):
         vol.Coerce(float),
     vol.Optional(CONF_HOST): cv.string,
-})
-
-CUSTOMIZE_SCHEMA = vol.Schema({
-    vol.Optional(CONF_SPEEDS): vol.All(cv.ensure_list, [cv.string])
 })
 
 async def async_setup_platform(hass, config, async_add_devices, discovery_info=None):
