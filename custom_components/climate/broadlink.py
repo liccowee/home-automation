@@ -152,14 +152,33 @@ class BroadlinkIRClimate(ClimateDevice, Entity):
             if sensor_state:
                 self._async_update_current_temp(sensor_state)
     
-    
+    def send_ir_on(self):     
+        section = self._current_operation.lower()
+        
+        if section == 'off':
+            value = 'off_command'
+        else: 
+            value = 'on_command'
+        
+        command = self._commands_ini.get(section, value)
+        
+        for retry in range(DEFAULT_RETRY):
+            try:
+                payload = b64decode(command)
+                self._broadlink_device.send_data(payload)
+                break
+            except (socket.timeout, ValueError):
+                try:
+                    self._broadlink_device.auth()
+                except socket.timeout:
+                    if retry == DEFAULT_RETRY-1:
+                        _LOGGER.error("Failed to send packet to Broadlink RM Device")
+
     def send_ir(self):     
         section = self._current_operation.lower()
         
         if section == 'off':
             value = 'off_command'
-        elif section == 'idle':
-            value = 'idle_command'
         else: 
             value = self._current_fan_mode.lower() + "_" + str(int(self._target_temperature)) if not section == 'off' else 'off_command'
         
@@ -277,7 +296,7 @@ class BroadlinkIRClimate(ClimateDevice, Entity):
         if kwargs.get(ATTR_TEMPERATURE) is not None:
             self._target_temperature = kwargs.get(ATTR_TEMPERATURE)
             
-            if not (self._current_operation.lower() == 'off' or self._current_operation.lower() == 'idle'):
+            if not (self._current_operation.lower() == 'off'):
                 self.send_ir()
             elif self._default_operation_from_idle is not None:
                 self.set_operation_mode(self._default_operation_from_idle)
@@ -289,7 +308,7 @@ class BroadlinkIRClimate(ClimateDevice, Entity):
         """Set new target temperature."""
         self._current_fan_mode = fan
         
-        if not (self._current_operation.lower() == 'off' or self._current_operation.lower() == 'idle'):
+        if not (self._current_operation.lower() == 'off'):
             self.send_ir()
             
         self.schedule_update_ha_state()
@@ -298,7 +317,7 @@ class BroadlinkIRClimate(ClimateDevice, Entity):
         """Set new target temperature."""
         self._current_operation = operation_mode
 
-        self.send_ir()
+        self.send_ir_on()
         self.schedule_update_ha_state()
         
     async def async_added_to_hass(self):
