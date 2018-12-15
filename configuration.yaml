@@ -67,6 +67,8 @@ tts:
 
 # broadlink learn a07763770f78
 switch:
+  - platform: plugwise
+    host: 192.168.1.62
   - platform: broadlink
     host: 192.168.1.62
     mac: '78:0F:77:63:77:A0'
