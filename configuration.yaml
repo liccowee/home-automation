@@ -98,11 +98,11 @@ remote:
     default_operation: 'off'
     default_fan_mode: mid
     customize:
-      operations:
+      qwer:
         - 'off'
         - cool
         - heat
-      fan_modes:
+      speeds:
         - low
         - mid
         - high
