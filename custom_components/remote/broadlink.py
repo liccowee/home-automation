@@ -46,6 +46,13 @@ DEFAULT_FAN_MODE_LIST = ['low', 'mid', 'high', 'auto']
 DEFAULT_OPERATION = 'off'
 DEFAULT_FAN_MODE = 'auto'
 
+PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend({
+    vol.Optional(ATTR_ACTIVITY): cv.string,
+    vol.Required(CONF_NAME): cv.string,
+    vol.Optional(ATTR_DELAY_SECS, default=DEFAULT_DELAY_SECS):
+        vol.Coerce(float),
+    vol.Optional(CONF_HOST): cv.string,
+})
 
 async def async_setup_platform(hass, config, async_add_devices, discovery_info=None):
     """Set up the Broadlink IR Climate platform."""
@@ -91,6 +98,7 @@ class BroadlinkIRTV(RemoteDevice):
         self._name = name or DEVICE_DEFAULT_NAME
         self._state = state
         self._icon = icon
+        self._is_hidden = False
         self._last_command_sent = None
 
     @property
@@ -112,6 +120,11 @@ class BroadlinkIRTV(RemoteDevice):
     def is_on(self):
         """Return true if remote is on."""
         return self._state
+
+    @property
+    def hidden(self):
+        """Return if we should hide entity."""
+        return self._is_hidden
 
     @property
     def device_state_attributes(self):
