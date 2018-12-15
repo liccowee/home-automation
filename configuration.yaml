@@ -96,6 +96,7 @@ television:
     target_temp_step: 1
     temp_sensor: sensor.living_room_temperature
     default_operation: 'off'
+    default_fan_mode: mid
     customize:
       operations:
         - 'off'
