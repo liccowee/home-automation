@@ -69,6 +69,10 @@ PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend({
     vol.Optional(CONF_DEFAULT_OPERATION_FROM_IDLE): cv.string
 })
 
+async def setup(hass, config):
+    hass.states.set('hello.world', 'Paulus')
+    return True
+
 async def async_setup_platform(hass, config, async_add_devices, discovery_info=None):
     """Set up the Broadlink IR Climate platform."""
     name = config.get(CONF_NAME)
