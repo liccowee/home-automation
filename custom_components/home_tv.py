@@ -11,7 +11,8 @@ from homeassistant.components.climate import (ClimateDevice, PLATFORM_SCHEMA, ST
 ATTR_OPERATION_MODE, SUPPORT_OPERATION_MODE, SUPPORT_TARGET_TEMPERATURE, SUPPORT_FAN_MODE)
 from homeassistant.const import (ATTR_UNIT_OF_MEASUREMENT, ATTR_TEMPERATURE, CONF_NAME, CONF_HOST, CONF_MAC, CONF_TIMEOUT, CONF_CUSTOMIZE)
 from homeassistant.helpers.event import (async_track_state_change)
-from homeassistant.helpers.entity import Entity
+from homeassistant.helpers.entity import Entity, async_generate_entity_id
+from homeassistant.helpers.entity_component import EntityComponent
 from configparser import ConfigParser
 from base64 import b64encode, b64decode
 
@@ -69,12 +70,14 @@ PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend({
     vol.Optional(CONF_DEFAULT_OPERATION_FROM_IDLE): cv.string
 })
 
-async def setup(hass, config):
-    hass.states.set('hello.world', 'Paulus')
-    return True
-
-async def async_setup_platform(hass, config, async_add_devices, discovery_info=None):
+@asyncio.coroutine
+def setup(hass, config):
     """Set up the Broadlink IR Climate platform."""
+
+    component = EntityComponent(_LOGGER, DOMAIN, hass)
+
+    entities = []
+
     name = config.get(CONF_NAME)
     ip_addr = config.get(CONF_HOST)
     mac_addr = binascii.unhexlify(config.get(CONF_MAC).encode().replace(b':', b''))
@@ -116,9 +119,11 @@ async def async_setup_platform(hass, config, async_add_devices, discovery_info=N
         _LOGGER.error("The ini file was not found. (" + ircodes_ini_path + ")")
         return
     
-    async_add_devices([
-        BroadlinkIRClimate(hass, name, broadlink_device, ircodes_ini, min_temp, max_temp, target_temp, target_temp_step, temp_sensor_entity_id, operation_list, fan_list, default_operation, default_fan_mode, default_operation_from_idle)
-    ])
+    entities.append(BroadlinkIRClimate(hass, name, broadlink_device, ircodes_ini, min_temp, max_temp, target_temp, target_temp_step, temp_sensor_entity_id, operation_list, fan_list, default_operation, default_fan_mode, default_operation_from_idle))
+    yield from component.async_add_entities(entities)
+
+    return True
+    
 
 class BroadlinkIRClimate(ClimateDevice, Entity):
 
