@@ -143,7 +143,7 @@ fan:
 
 climate:
   - platform: broadlink
-    name: "大廳冷氣"
+    name: "Living Room AC"
     host: 192.168.1.62
     mac: '78:0F:77:63:77:A0'
     ircodes_ini: 'broadlink_climate_codes/daikin_ecoking.ini'
@@ -165,7 +165,7 @@ climate:
         - high
         - auto
   - platform: broadlink
-    name: "大廳冷氣"
+    name: "Jian Room AC"
     host: 192.168.1.61
     mac: '78:0F:77:52:32:6D'
     ircodes_ini: 'broadlink_climate_codes/daikin_ecoking.ini'
