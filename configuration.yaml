@@ -164,30 +164,28 @@ climate:
         - mid
         - high
         - auto
-
-climate:
   - platform: broadlink
-      name: "建房間冷氣"
-      host: 192.168.1.61
-      mac: '78:0F:77:52:32:6D'
-      ircodes_ini: 'broadlink_climate_codes/daikin_ecoking.ini'
-      min_temp: 16
-      max_temp: 30
-      target_temp: 20
-      target_temp_step: 1
-      temp_sensor: sensor.living_room_temperature
-      default_operation: 'off'
-      default_fan_mode: mid
-      customize:
-        operations:
-          - 'off'
-          - cool
-          - heat
-        fan_modes:
-          - low
-          - mid
-          - high
-          - auto
+    name: "大廳冷氣"
+    host: 192.168.1.61
+    mac: '78:0F:77:52:32:6D'
+    ircodes_ini: 'broadlink_climate_codes/daikin_ecoking.ini'
+    min_temp: 16
+    max_temp: 30
+    target_temp: 20
+    target_temp_step: 1
+    temp_sensor: sensor.living_room_temperature
+    default_operation: 'off'
+    default_fan_mode: mid
+    customize:
+      operations:
+        - 'off'
+        - cool
+        - heat
+      fan_modes:
+        - low
+        - mid
+        - high
+        - auto
 
 group: !include groups.yaml
 automation: !include automations.yaml
