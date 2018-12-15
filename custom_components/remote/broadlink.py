@@ -54,6 +54,10 @@ PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend({
     vol.Optional(CONF_HOST): cv.string,
 })
 
+CUSTOMIZE_SCHEMA = vol.Schema({
+    vol.Optional(CONF_SPEEDS): vol.All(cv.ensure_list, [cv.string])
+})
+
 async def async_setup_platform(hass, config, async_add_devices, discovery_info=None):
     """Set up the Broadlink IR Climate platform."""
     name = config.get(CONF_NAME)
