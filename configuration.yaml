@@ -84,45 +84,45 @@ switch:
 cloud:
 
 #remote
-remote:
-  - platform: broadlink
-    name: "大廳 電視機"
-    host: 192.168.1.61
-    mac: '78:0F:77:52:32:6D'
-    ircodes_ini: 'broadlink_climate_codes/daikin_ecoking.ini'
-    min_temp: 16
-    max_temp: 30
-    target_temp: 20
-    target_temp_step: 1
-    temp_sensor: sensor.living_room_temperature
-    default_operation: 'off'
-    default_fan_mode: mid
-    customize:
-      operations:
-        - 'off'
-        - cool
-        - heat
-      speeds:
-        - low
-        - mid
-        - high
-        - auto
+# remote:
+#   - platform: broadlink
+#     name: "大廳 電視機"
+#     host: 192.168.1.61
+#     mac: '78:0F:77:52:32:6D'
+#     ircodes_ini: 'broadlink_climate_codes/daikin_ecoking.ini'
+#     min_temp: 16
+#     max_temp: 30
+#     target_temp: 20
+#     target_temp_step: 1
+#     temp_sensor: sensor.living_room_temperature
+#     default_operation: 'off'
+#     default_fan_mode: mid
+#     customize:
+#       operations:
+#         - 'off'
+#         - cool
+#         - heat
+#       speeds:
+#         - low
+#         - mid
+#         - high
+#         - auto
 
 #input
-input_number:
-  slider1:
-    name: Slider
-    initial: 30
-    min: -20
-    max: 35
-    step: 1
-  box1:
-    name: Numeric Input Box
-    initial: 30
-    min: -20
-    max: 35
-    step: 1
-    mode: box
+# input_number:
+#   slider1:
+#     name: Slider
+#     initial: 30
+#     min: -20
+#     max: 35
+#     step: 1
+#   box1:
+#     name: Numeric Input Box
+#     initial: 30
+#     min: -20
+#     max: 35
+#     step: 1
+#     mode: box
 
 
 # Custom Components
@@ -164,7 +164,6 @@ climate:
         - mid
         - high
         - auto
-
   - platform: broadlink
     name: "大廳冷氣"
     host: 192.168.1.62
