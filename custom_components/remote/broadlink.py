@@ -32,6 +32,7 @@ CONF_OPERATIONS = 'operations'
 CONF_FAN_MODES = 'fan_modes'
 CONF_DEFAULT_OPERATION = 'default_operation'
 CONF_DEFAULT_FAN_MODE = 'default_fan_mode'
+CONF_SPEEDS = 'operations'
 
 CONF_DEFAULT_OPERATION_FROM_IDLE = 'default_operation_from_idle'
 
