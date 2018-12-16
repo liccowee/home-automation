@@ -1,12 +1,12 @@
-	switch.one_door:
-		icon: 'mdi:nintendo-switch'
-	switch.one_door:
-		icon: 'mdi:nintendo-switch'
-	switch.on_tv:
-		icon: 'mdi:monitor-cellphone-star'
-	switch.on_tv:
-		icon: 'mdi:monitor-cellphone-star'
-	switch.volume_tv:
-		icon: 'mdi:monitor-cellphone-star'
-	switch.volume_adjust_tv:
-		icon: 'mdi:monitor-cellphone-star'
+switch.one_door:
+	icon: 'mdi:nintendo-switch'
+switch.one_door:
+	icon: 'mdi:nintendo-switch'
+switch.on_tv:
+	icon: 'mdi:monitor-cellphone-star'
+switch.on_tv:
+	icon: 'mdi:monitor-cellphone-star'
+switch.volume_tv:
+	icon: 'mdi:monitor-cellphone-star'
+switch.volume_adjust_tv:
+	icon: 'mdi:monitor-cellphone-star'
