@@ -10,3 +10,7 @@ switch.volume_tv:
   icon: 'mdi:monitor-cellphone-star'
 switch.volume_adjust_tv:
   icon: 'mdi:monitor-cellphone-star'
+climate.living_room_ac:
+  friendly_name: "大廳冷氣"
+climate.jian_room_ac:
+  friendly_name: "建 房間冷氣"
