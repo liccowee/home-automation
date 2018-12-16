@@ -1,6 +1,6 @@
 switch.one_door:
   icon: 'mdi:nintendo-switch'
-switch.one_door:
+switch.two_door:
   icon: 'mdi:nintendo-switch'
 switch.on_tv:
   icon: 'mdi:monitor-cellphone-star'
