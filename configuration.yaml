@@ -154,18 +154,18 @@ fan:
             - high
             - highest
   - platform: broadlink
-      name: "飯廳"
-      host: 192.168.1.63
-      mac: '78:0F:77:52:2C:E7'
-      rfcodes_ini: 'broadlink_fan_codes/livingroom_fanco.ini'
-      default_speed: low
-      defaut_direction: left
-      customize:
-          speeds:
-              - low
-              - medium
-              - high
-              - highest
+    name: "飯廳"
+    host: 192.168.1.63
+    mac: '78:0F:77:52:2C:E7'
+    rfcodes_ini: 'broadlink_fan_codes/livingroom_fanco.ini'
+    default_speed: low
+    defaut_direction: left
+    customize:
+        speeds:
+            - low
+            - medium
+            - high
+            - highest
 
 climate:
   - platform: broadlink
