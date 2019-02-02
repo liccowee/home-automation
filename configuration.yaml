@@ -166,6 +166,19 @@ fan:
             - medium
             - high
             - highest
+  - platform: broadlink
+    name: "Game Room"
+    host: 192.168.1.64
+    mac: '78:0F:77:52:39:83'
+    rfcodes_ini: 'broadlink_fan_codes/livingroom_fanco.ini'
+    default_speed: low
+    defaut_direction: left
+    customize:
+        speeds:
+            - low
+            - medium
+            - high
+            - highest
 
 climate:
   - platform: broadlink
@@ -216,6 +229,28 @@ climate:
     name: "Dining Room"
     host: 192.168.1.63
     mac: '78:0F:77:52:2C:E7'
+    ircodes_ini: 'broadlink_climate_codes/daikin_ecoking.ini'
+    min_temp: 16
+    max_temp: 30
+    target_temp: 20
+    target_temp_step: 1
+    temp_sensor: sensor.living_room_temperature
+    default_operation: 'off'
+    default_fan_mode: mid
+    customize:
+      operations:
+        - 'off'
+        - cool
+        - heat
+      fan_modes:
+        - low
+        - mid
+        - high
+        - auto
+  - platform: broadlink
+    name: "Dining Room"
+    host: 192.168.1.64
+    mac: '78:0F:77:52:39:83'
     ircodes_ini: 'broadlink_climate_codes/daikin_ecoking.ini'
     min_temp: 16
     max_temp: 30
