@@ -248,7 +248,7 @@ climate:
         - high
         - auto
   - platform: broadlink
-    name: "Dining Room"
+    name: "Game Room"
     host: 192.168.1.64
     mac: '78:0F:77:52:39:83'
     ircodes_ini: 'broadlink_climate_codes/daikin_ecoking.ini'
