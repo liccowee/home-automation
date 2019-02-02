@@ -168,7 +168,7 @@ fan:
             - highest
   - platform: broadlink
     name: "Game Room"
-    host: 192.168.1.64
+    host: 192.168.1.90
     mac: '78:0F:77:52:39:83'
     rfcodes_ini: 'broadlink_fan_codes/livingroom_fanco.ini'
     default_speed: low
@@ -249,7 +249,7 @@ climate:
         - auto
   - platform: broadlink
     name: "Game Room"
-    host: 192.168.1.64
+    host: 192.168.1.90
     mac: '78:0F:77:52:39:83'
     ircodes_ini: 'broadlink_climate_codes/daikin_ecoking.ini'
     min_temp: 16
